@@ -1,7 +1,7 @@
 type ButtonProps={
 	style:{};
 	children:React.ReactNode;
-	onClick:()=>void;
+	onClick:(e:React.MouseEvent<HTMLButtonElement>)=>void;
 }
 
 export default function Button({ style, children, onClick }:ButtonProps) {

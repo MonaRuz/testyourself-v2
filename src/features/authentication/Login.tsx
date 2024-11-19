@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function Login() {
 	const navigate=useNavigate()
-	function handleLogin(e) {
+	function handleLogin(e:React.MouseEvent<HTMLButtonElement>) {
 		e.preventDefault()
 		navigate("/dashboard")
 		//code for logging in and redirect to dashboard
