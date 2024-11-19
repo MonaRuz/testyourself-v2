@@ -2,7 +2,7 @@ import Logo from "../../components/Logo"
 import Button from "../../components/Button"
 
 export default function Register() {
-  function handleRegister(e) {
+  function handleRegister(e:React.MouseEvent<HTMLButtonElement>) {
 		e.preventDefault()
 		//code for logging in and redirect to dashboard
 	}
