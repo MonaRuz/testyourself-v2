@@ -2,11 +2,13 @@ import { useNavigate } from "react-router-dom"
 import useCategories from "./useCategories"
 import Spinner from "../../components/Spinner"
 import Error from "../../components/Error"
+import type { Categories } from "../../types"
+
 
 export default function CategoriesList() {
 	const navigate = useNavigate()
 
-	const { isLoading, categories } = useCategories()
+	const { isLoading, categories}:{isLoading:boolean,categories:Categories} = useCategories()
 
 	if (isLoading) return <Spinner>Categories</Spinner>
 
@@ -19,7 +21,7 @@ export default function CategoriesList() {
 				Your categories:
 			</h3>
 			<ul className='text-yellow-200 text-center sm:grid sm:grid-cols-2 sm:gap-4 md:w-3/4 mx-auto'>
-				{categories.map((category) => {
+				{categories?.map((category) => {
 					return (
 						<li
 							onClick={() => navigate(`/${category.category}/overview`)}
